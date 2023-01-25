@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const router = require("./routes/routes");
 require("dotenv").config();
 
 // App initialization
@@ -27,6 +28,8 @@ const db = mongoose.connection;
 db.once('open', () => {
     console.log('Database connected!');
 });
+
+app.post('/newUser', router.signup);
 
 app.listen(PORT, () => {
     console.log(`Gift Ideas backend is up on port ::: ${PORT}`);
