@@ -7,8 +7,8 @@ const userSchema = new Schema({
     // Testing out "unique" schematype
     username: { type: String, required: true, unique: true },
     password: { type: String, requried: true },
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
+    firstname: { type: String, required: true },
+    lastname: { type: String, required: true },
     email: { type: String, required: true },
     phoneNumber: { type: Number, required: false },
     birthday: { type: String, required: false }
