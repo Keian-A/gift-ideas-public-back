@@ -33,12 +33,12 @@ router.login = async (req, res) => {
         } else {
             let compareRes = await bcrypt.compare(req.body.password, storedUser.password);
             if (compareRes) {
+                // Remove password property from user object sent back, even tho it is hashed
                 res.status(200).send(storedUser);
             } else {
                 res.status(500).send("Incorrect login credentials.");
             }
         }
-        console.log(storedUser);
     } catch (e) {
         console.error(e.message);
         res.status(500).send("Incorrect credentials");
