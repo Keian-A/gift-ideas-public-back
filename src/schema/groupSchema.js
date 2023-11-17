@@ -8,7 +8,7 @@ const { giftSchema } = require('./giftSchema.js');
 const groupSchema = new Schema({
     groupName: { type: String, required: true },
     groupLeader: { type: String, required: true },
-    groupUUID: { type: String, required: true, unique: true },
+    groupUUID: { type: String, required: true },
     giftList: [giftSchema],
 });
 
