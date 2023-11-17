@@ -36,6 +36,7 @@ db.once('open', () => {
 
 app.post('/newUser', router.signup);
 app.post('/login', router.login);
+app.post('/createGroup', router.createGroup);
 
 app.listen(PORT, () => {
     console.log(`Gift Ideas backend is up on port ::: ${PORT}`);
