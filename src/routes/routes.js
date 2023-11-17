@@ -45,4 +45,13 @@ router.login = async (req, res) => {
     }
 }
 
+router.createGroup = async (req, res) => {
+    try {
+        // groupModel.create({ groupName: req.body.groupName, groupLeader: req.body.username, })
+        userModel.findOneAndUpdate({ username: req.body.username })
+    } catch (e) {
+        console.error(e.message);
+    }
+}
+
 module.exports = router;
